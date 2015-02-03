@@ -1,5 +1,5 @@
 'use strict';
-var app = angular.module('wardClerkAssist', ['ngRoute', 'firebase']);
+var app = angular.module('wardClerkAssist', ['ngRoute', 'firebase', 'formly']);
 
 app.constant('fireConstant', {
 	"firebaseUrl": "https://wardclerk.firebaseio.com/"

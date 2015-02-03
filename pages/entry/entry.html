@@ -6,13 +6,13 @@
 <body ng-controller="mainCtrl">
 	<section class="main-container">
 		<div class="heading-logo">
-			<img src="http://d35fkdjhhgt99.cloudfront.net/static/use-media-items/15/14851/full-2000x793/524df22e/Logo_of_the_Church_of_Jesus_Christ_of_Latter-.png?resolution=0">
+			<img src="">
 		</div>
 		<div class="login-info">
-			<h3>Login</h3>
-			<input class="text-box" type="text" placeholder="User Name"> <br>
-			<input class="text-box" type="text" placeholder="Password"> <br>
-			<button class="verify" ng-click="signIn(username)">Enter</button> <br>
+			<h3>New Entry</h3>
+			<formly-form model="vm.user" fields="vm.userFields">
+  				<button type="submit" class="btn btn-default" ng-click="vm.submit(vm.user)">Submit</button>
+			</formly-form>
 		</div>
 	</section>
 </body>
