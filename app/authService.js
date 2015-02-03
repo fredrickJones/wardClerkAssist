@@ -1,31 +1,33 @@
 'use strict';
 var app = angular.module('wardClerkAssist');
 
-app.service('authService', function() {
+app.service('authService', function($firebase, $firebaseAuth) {
 //Just a reference to the firebase endpoint
-	var firebaseUrl = 'https://wardclerk.firebaseio.com/'
+	var firebaseUrl = 'https://wardclerk.firebaseio.com'
 //Creates an object using the Firebase Constructor with our endpoint passed in
 	var firebaseLogin = new Firebase(firebaseUrl);
+	
 
-	var loginCallback = function(err, authData) {
-		if (err) {
-			switch (err.code) {
-				case "INVALID_EMAIL":  // handle an invalid email
-				case "INVALID_PASSWORD":  // handle an invalid password
-				default:
-			}
-		} else if (authData) {  // user authenticated with Firebase
-			console.log("Logged In! User ID: " + authData.uid);
-			cb(authData); //gives the authenticated user to our callback
-		}
-	};
+	
 
 //login method to be called from our controller. The callback is then passed the authenticated user
 	this.login = function(user, cb){
-		firebaseLogin.authWithPassword({
-			email : user.email,
-			password : user.password
-		}, loginCallback);
+		var loginCallback = function(err, authData) {
+			if (err) {
+				switch (err.code) {
+					case "INVALID_EMAIL":  // handle an invalid email
+					case "INVALID_PASSWORD":  // handle an invalid password
+					default:
+				}
+			} else if (authData) {  // user authenticated with Firebase
+				console.log("Logged In! User ID: " + authData.uid);
+				cb(authData); //gives the authenticated user to our callback
+			}
+			firebaseLogin.authWithPassword({
+				email : user.email,
+				password : user.password
+			}, loginCallback);
+		}
 	};
 
 //Step 3 of Registration

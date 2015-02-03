@@ -1,7 +1,7 @@
 'use strict';
 var app = angular.module('wardClerkAssist');
 
-app.controller('mainCtrl', function($scope) {
+app.controller('mainCtrl', function($scope, $location, firebaseService) {
 	// $scope.getData = function() {
 	// };
 

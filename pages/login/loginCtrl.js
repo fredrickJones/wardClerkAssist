@@ -13,8 +13,9 @@ app.controller('loginCtrl', function($scope, authService, $location) {
 		return authService.login($scope.details, loginCallback);
 	};
 
+//Step 2 of Registration
 	$scope.register = function () {
-		return authService.register($scope.details, loginCallback);
+		authService.register($scope.details, loginCallback);
 	};
 
 	$scope.status = 'Register';
