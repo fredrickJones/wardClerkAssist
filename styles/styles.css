@@ -1,0 +1,26 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 95%;
+  width: 100%;
+  /*font-family: sans-serif;
+  background: rgba(151, 151, 151, 1);*/
+}
+
+.main-container {
+	margin: 0 auto;
+}
+
+p {
+  text-align: center;
+  margin: 3px 0;
+  font-size: 17px;
+}
+
+.heading-logo img {
+	margin: 0 auto;
+	width: 25%;
+}
