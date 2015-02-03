@@ -1,5 +1,5 @@
 'use strict';
-var app = angular.module('wardClerkAssist', ['ngRoute', 'firebase', 'formly']);
+var app = angular.module('wardClerkAssist', ['ngRoute', 'firebase']);
 
 app.constant('fireConstant', {
 	"firebaseUrl": "https://wardclerk.firebaseio.com/"
@@ -15,25 +15,40 @@ app.config(function($routeProvider) {
 			controller: 'entryCtrl'
 		}).when('/visit', {
 			templateUrl: '/pages/visit/visit.html',
-			controller: 'visitCtrl'
+			controller: 'visitCtrl',
+			resolve: {
+				toVisit: function($route, visitService) {
+					return visitService.needToVisit();
+				}
+			}
 		}).when('/notward', {
 			templateUrl: '/pages/notWard/notWard.html',
-			controller: 'notWardCtrl'
+			controller: 'notWardCtrl',
+			resolve: {
+				notInWard: function($route, notService) {
+					return notService.needToRemove();
+				}
+			}
 		}).when('/person', {
 			templateUrl: '/pages/person/person.html',
-			controller: 'personCtrl'
+			controller: 'personCtrl',
+			resolve: {
+				personInfo: function($route, personService) {
+					return personService.individualData();
+				}
+			}
+		}).when('/dashboard/:userId', {
+		    templateUrl: '/pages/dashboard/dashboard.html',
+		    controller: 'dashboardCtrl',
+		    resolve: {
+		      userReference: function(firebaseService, $route){
+		        return firebaseService.getUser($route.current.params.userId);
+		      },
+		      thingsReference: function(firebaseService, $route){
+		        return firebaseService.getThings($route.current.params.userId);
+				}
+			}
 		}).otherwise({
 			redirectTo: '/login'
-		});
-});
-
-
-app.run(function($rootScope, $route, $location, $routeParams, environService) {
-	$rootScope.$on('$routeChangeStart', function(event, next, current) {
-		if (environService.getUserName()) {
-			$rootScope.username = environService.getUserName();
-		} else {
-			$location.path('/login');
-		}
 	});
 });

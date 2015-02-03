@@ -1,0 +1,6 @@
+<div class="view-content">
+	<h1>Need to Visit</h1>
+	<ul ng-repeat="name in visits">
+		<li>{{name.name}} <button ng-click="notInWard()">Not in Ward</button><button ng-click="visitedPerson(name)">Still Here</button></li>
+	</ul>
+</div>

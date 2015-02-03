@@ -1,26 +1,97 @@
 html {
-  height: 100%;
-  width: 100%;
+	height: 100%;
+	width: 100%;
 }
 
 body {
-  height: 95%;
-  width: 100%;
-  /*font-family: sans-serif;
-  background: rgba(151, 151, 151, 1);*/
-}
-
-.main-container {
-	margin: 0 auto;
+	height: 95%;
+	width: 100%;
+	font-family: sans-serif;
+	background: rgba(151, 151, 151, 1);
 }
 
 p {
-  text-align: center;
-  margin: 3px 0;
-  font-size: 17px;
+	text-align: center;
+	margin: 3px 0;
+	font-size: 17px;
 }
 
-.heading-logo img {
+.main-container {
+	width: 75%;
+	margin: 10px auto;
+	padding: 20px;
+	background: rgba(255, 255, 255, 0.86);
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+	box-shadow: 0 0px 5px rgba(0,0,0,.5);
+}
+
+.main-container h1 {
+	font-weight: bold;
+	font-size: 30px;
+}
+
+.main-container h2 {
+	font-size: 18px;
+	font-weight: normal;
+}
+
+.main-container h1, .main-container h2 {
+	text-align: center;
+	margin: 5px 0;
+	font-family: Raleway, Helvetica Neue, Helvetica, Arial, Sans Serif;
+	color:#999;
+}
+
+.header__main-image {
+	height: 285px;
+	background: #ccc;
+	margin: -20px -20px 0 -20px;
+	box-shadow: inset 0 -100px 100px -100px rgba(0,0,0,.5);
+	background: url(https://c1.staticflickr.com/9/8426/7806421148_95b49a4938_z.jpg) no-repeat;
+	background-size: cover;
+	background-position: center;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+
+.main-logo {
+	width: 150px;
+	height: 150px;
+	background: url(http://cdn2.bigcommerce.com/server500/d7de5/product_images/uploaded_images/ldslogo.png) center no-repeat;
+	background-size: 120%;
+	background-color: white;
+	border: 1px solid #ccc;
 	margin: 0 auto;
-	width: 25%;
+	margin-top: -75px;
+	box-shadow: 0 -5px 10px -5px rgba(0,0,0,.5);
+	border-radius: 75px;
+	-webkit-border-radius: 75px;
+	-moz-border-radius: 75px;
+	-o-border-radius: 75px;
+}
+
+.main-nav {
+	align-items: center;
+	margin: 10px;
+	padding: 15px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.main-nav .nav-item {
+	text-align: center;
+	padding: 15px;
+	text-decoration: none;
+	color: #3d3d3b;
+}
+
+.view-content {
+	width: 80%;
+	margin: 0 auto;
+	padding: 0 25px;
+	
 }

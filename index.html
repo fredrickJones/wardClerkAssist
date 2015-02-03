@@ -1,43 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="wardClerkAssist">
 <head>
 	<title>Ward Clerk Assist</title>
 	<link rel="stylesheet" type="text/css" href="styles/styles.css">
 </head>
 <body ng-controller="mainCtrl">
 	<section class="main-container">
-		<div class="heading-logo">
-			<a href="#"><img src="http://d35fkdjhhgt99.cloudfront.net/static/use-media-items/15/14851/full-2000x793/524df22e/Logo_of_the_Church_of_Jesus_Christ_of_Latter-.png?resolution=0"></a>
+		<div class="header">
+			<div class="header__main-image"></div>
+		    <div class="main-logo"></div>
+		    <h1>Assistant List Maker</h1>
+		    <h2>could be used in a creppy way too</h2>
 		</div>
 		<nav class="main-nav">
-			<a href="#/login"><h3>Login</h3></a>
-			<a href="#/entry"><h3>New Entry</h3></a>
-			<a href="#/visit"><h3>Visit List</h3></a>
-			<a href="#/notward"><h3>Not in Ward</h3></a>
-			<a href="#/person"><h3>Individual</h3></a>
+			<a class="nav-item" href="#/login"><h3>Login</h3></a>
+			<a class="nav-item" href="#/entry"><h3>New Entry</h3></a>
+			<a class="nav-item" href="#/visit"><h3>Visit List</h3></a>
+			<a class="nav-item" href="#/notward"><h3>Not in Ward</h3></a>
+			<a class="nav-item" href="#/person"><h3>Individual</h3></a>
 		</nav>
 		<div class="container">
 			<ng-view></ng-view>
 		</div>
 	</section>
 
-<!-- CDNs: angular, angular-route, firebase, and angularfire -->
-	<script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js'></script>
-	<script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.min.js'></script>
-	<script src="https://cdn.firebase.com/js/client/1.0.17/firebase.js"></script> 
-	<script src="https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular-route.min.js"></script>
-	<script src="bower_components/angular-formly/dist/formly.min.js"></script>
-
-<!-- My Scripts. app: rtfmApp, mainControl, EnvironmentService;  pages: loginControl, threadsControl, threadsService, threadControl -->
+<!-- Angular -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.min.js"></script>
+<!-- Firebase -->
+	<script src="//cdn.firebase.com/js/client/1.0.17/firebase.js"></script> 
+	<script src="//cdn.firebase.com/libs/angularfire/0.8.0/angularfire.js"></script>
+<!-- App Init -->
 	<script src='app/wardClerkApp.js'></script>
-	<script src='app/mainCtrl.js'></script>
-	<script src='app/environService.js'></script>
-	<script src='pages/login/loginCtrl.js'></script>
-	<script src='pages/notWard/notWardCtrl.js'></script>
-	<script src='pages/visit/visitCtrl.js'></script>
-	<script src='pages/person/personCtrl.js'></script>
-	<script src='pages/entry/entryCtrl.js'></script>
-	<script src='pages/entry/entryService.js'></script>
+<!-- Controllers -->
+	<script src="app/mainCtrl.js"></script>
+	<script src="pages/login/loginCtrl.js"></script>
+	<script src="pages/notWard/notWardCtrl.js"></script>
+	<script src="pages/visit/visitCtrl.js"></script>
+	<script src="pages/person/personCtrl.js"></script>
+	<script src="pages/entry/entryCtrl.js"></script>
+	<script src="pages/dashboard/dashboardCtrl.js"></script>
+<!-- Services -->
+	<script src="pages/entry/entryService.js"></script>
+	<script src="app/authService.js"></script>
+	<script src="app/firebaseService.js"></script>
 </body>
 </html>

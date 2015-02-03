@@ -1,36 +1,30 @@
 'use strict';
 var app = angular.module('wardClerkAssist');
 
-app.controller('loginCtrl', function($scope, environService, $location) {
-	$scope.env = environService.getEnv();
-	$scope.signIn
-
-
-	$scope.formData = {};
-	$scope.formFields = [
-    	{
-	        //the key to be used in the model values {... "username": "johndoe" ... }
-	        key: 'username',
-	        type: 'text',
-	        label: 'Username',
-	        placeholder: 'johndoe',
-	        required: true,
-	        disabled: false,
-	        description: 'Descriptive text'
-	    },
-	    {
-	        key: 'password',
-	        type: 'password',
-	        label: 'Password',
-	        required: true,
-	        disabled: false,
-	        expressionProperties: {
-	            hide: '!model.username'
-	        }
-	    }
-	];
-
-	$scope.onSubmit = function() {
-	    console.log('form submitted:', $scope.formData);
+app.controller('loginCtrl', function($scope, authService, $location) {
+	var loginCallback = function(user){
+		user.uid = user.uid.replace('simplelogin:', '');
+		$scope.$apply(function(){
+			$location.path('/dashboard/' + user.uid)
+		});
 	};
-})
+
+	$scope.login = function () {
+		return authService.login($scope.details, loginCallback);
+	};
+
+	$scope.register = function () {
+		return authService.register($scope.details, loginCallback);
+	};
+
+	$scope.status = 'Register';
+	$scope.showReg = function(){
+		if($scope.status === 'Register') {
+			$scope.status = 'Login';
+		} else {
+			$scope.status = 'Register';
+		}
+		$scope.reg = !$scope.reg;
+	};
+
+});
