@@ -1,5 +1,5 @@
 'use strict';
-var app = angular.module('wardClerkAssist');
+var app = angular.module('PersonTracker');
 
 app.controller('entryCtrl', function($scope, $location, firebaseService) {
 	$scope.newEntry = function() {
@@ -19,15 +19,15 @@ app.controller('entryCtrl', function($scope, $location, firebaseService) {
 		var data = {};
 		data.name = $scope.details.name;
 		data.address = $scope.details.address;
-		data.status = 'visitList';
+		data.status = 'inList';
 		$scope.visitList.$add(data);
 		$scope.details.name = '';
 		$scope.details.address = '';
 		console.log(data);
 	};
 	
-	$scope.notInWard = function(data) {
-		data.status = 'notInWard';
+	$scope.notWanted = function(data) {
+		data.status = 'notWanted';
 		$scope.notInWard.$save(data);
 		// console.log(data);
 	};

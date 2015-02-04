@@ -1,8 +1,8 @@
 <div class="view-content">
 	<h1>New Entry</h1>
-	<form>
-		<input class="form-control" type="text" placeholder="Full Name" ng-model="details.name" required /><br />
-		<input class="form-control" type="address" placeholder="Address" ng-model="details.address" required /><br />
+	<form ng-model="details">
+		<input class="form-control" type="text" placeholder="Full Name" ng-model="name" required /><br />
+		<input class="form-control" type="address" placeholder="Address" ng-model="address" required /><br />
 		<button ng-click="postToList()">Submit</button>
 	</form>
 </div>

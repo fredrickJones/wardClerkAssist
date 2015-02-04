@@ -38,7 +38,12 @@ p {
 	font-weight: normal;
 }
 
-.main-container h1, .main-container h2 {
+.main-container h3{
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.main-container h1, .main-container h2, .main-container h3 {
 	text-align: center;
 	margin: 5px 0;
 	font-family: Raleway, Helvetica Neue, Helvetica, Arial, Sans Serif;
@@ -50,7 +55,7 @@ p {
 	background: #ccc;
 	margin: -20px -20px 0 -20px;
 	box-shadow: inset 0 -100px 100px -100px rgba(0,0,0,.5);
-	background: url(https://c1.staticflickr.com/9/8426/7806421148_95b49a4938_z.jpg) no-repeat;
+	background: url(../images/city_sunlight.jpg) no-repeat;
 	background-size: cover;
 	background-position: center;
 	border-top-left-radius: 4px;
@@ -60,8 +65,8 @@ p {
 .main-logo {
 	width: 150px;
 	height: 150px;
-	background: url(http://cdn2.bigcommerce.com/server500/d7de5/product_images/uploaded_images/ldslogo.png) center no-repeat;
-	background-size: 120%;
+	background: url(http://www.fredrickjonesdesign.com/wp-content/uploads/2014/08/Logo.png) center no-repeat;
+	background-size: 100%;
 	background-color: white;
 	border: 1px solid #ccc;
 	margin: 0 auto;
@@ -89,9 +94,83 @@ p {
 	color: #3d3d3b;
 }
 
+.container {
+	text-align: center;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.row {
+	margin: 0 auto;
+	width: 100%;
+}
+
+.flex-box {
+	padding: 15px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.list {
+	float: left;
+	width: 45%;
+	margin: 20px;
+	min-height: 200px;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+	box-shadow: 0 0px 5px rgba(0,0,0,.5);
+}
+
+.person {
+	width: 90%;
+	margin: 5px auto;
+	min-height: 20px;
+	background: rgba(255, 255, 255, .85);
+	display: block;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+	box-shadow: 0 0px 5px rgba(0,0,0,.5);
+	cursor: pointer;
+}
+
+/*-- The Hidden Address --*/
+.person-name {
+	text-align: left;
+	width: 60%;
+	float: left;
+	margin: 5px;
+	line-height: 22px;
+	font-size: 14px;
+	font-weight: lighter;
+}
+
+.person-button {
+	margin: 5px 5px 5px 0;
+	font-weight: lighter;
+}
+
+/*-- The Hidden Address --*/
+.person-address {
+	position: relative;
+	top: 20px;
+	right: 0;
+}
+
+/*-- Address Animation --*/
+.slide.ng-enter, .slide.ng-leave {
+  -webkit-transition:0.5s linear ease;
+  transition:0.5s linear ease;
+}
+
+/*-- extra stuff --*/
 .view-content {
 	width: 80%;
 	margin: 0 auto;
 	padding: 0 25px;
-	
+
 }

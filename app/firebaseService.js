@@ -1,14 +1,18 @@
 'use strict';
-var app = angular.module('wardClerkAssist');
+var app = angular.module('personTracker');
 
-app.service('firebaseService', function ($firebase) {
-	var firebaseUrl = 'https://wardclerk.firebaseio.com/';
+app.service('firebaseService', function($http, $q, $firebase, fireConstant) {
+	var url = fireConstant.firebaseUrl;
 
 	this.getUser = function(userId){
-		return $firebase(new Firebase(firebaseUrl + 'users/' + userId)).$asObject();
+		return $firebase(new Firebase(url + 'users/' + userId)).$asObject();
 	};
 
 	this.getThings = function(userId){
-		return $firebase(new Firebase(firebaseUrl + 'users/' + userId + '/things')).$asArray();
+		return $firebase(new Firebase(url + 'users/' + userId + '/things')).$asArray();
+	};
+
+	this.getList = function() {
+		return $firebase(new Firebase(url + '/list'));
 	};
 });
