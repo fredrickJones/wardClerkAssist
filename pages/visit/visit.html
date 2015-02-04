@@ -1,5 +1,10 @@
 <div class="view-content">
 	<h1>Need to Visit</h1>
+	<div class="queue enter">
+	    <div class="question" ng-repeat="name in visitList | filter: {status: 'visitList'}">
+	    <div ng-click="notInWard(q)">{{name.visitList}}</div>
+	    </div>
+	</div>
 	<div ng->
 		<ul ng-repeat="name in ward">
 			<li>{{name.name}} <button ng-click="notInWard()">Not in Ward</button><button ng-click="visitedPerson(name)">Still Here</button></li>

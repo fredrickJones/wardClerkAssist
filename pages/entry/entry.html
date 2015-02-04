@@ -1,23 +1,8 @@
 <div class="view-content">
 	<h1>New Entry</h1>
-	<form ng-submit="addEntry()">
+	<form>
 		<input class="form-control" type="text" placeholder="Full Name" ng-model="details.name" required /><br />
 		<input class="form-control" type="address" placeholder="Address" ng-model="details.address" required /><br />
-		<input type="submit" class="btn btn-info btn-lg" value="Submit" />
+		<button ng-click="postToList()">Submit</button>
 	</form>
-</div>
-
-
-<div class="view-content">
-	<h1>Dashboard</h1>
-
-	<input ng-model="profile.name"/>
-	<button ng-click="update()">Update Profile</button>
-
-	<input ng-model="thing.name" />
-	<button ng-click="addThing()">Add Thing</button>
-	<div ng-repeat="thing in things">
-		{{thing.name}}
-		<button ng-click="removeThing(thing)">Destroy</button>
-	</div>
 </div>

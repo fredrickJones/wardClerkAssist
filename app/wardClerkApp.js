@@ -7,20 +7,21 @@ var app = angular.module('wardClerkAssist', ['ngRoute', 'firebase']);
 
 app.config(function($routeProvider) {
 	$routeProvider
-		.when('/login', {
-			templateUrl: '/pages/login/login.html',
-			controller: 'loginCtrl'
-		}).when('/entry/:userId', {
+		// .when('/login', {
+		// 	templateUrl: '/pages/login/login.html',
+		// 	controller: 'loginCtrl'
+		// })
+		.when('/entry', {
 		    templateUrl: '/pages/entry/entry.html',
 		    controller: 'entryCtrl',
-		    resolve: {
-		      userReference: function(firebaseService, $route){
-		        return firebaseService.getUser($route.current.params.userId);
-		      },
-		      thingsReference: function(firebaseService, $route){
-		        return firebaseService.getThings($route.current.params.userId);
-				}
-			}
+		 //    resolve: {
+			// 	userReference: function(firebaseService, $route){
+			// 		return firebaseService.getUser($route.current.params.userId);
+			// 	},
+			// 	thingsReference: function(firebaseService, $route){
+			// 		return firebaseService.getThings($route.current.params.userId);
+			// 	}
+			// }
 		}).when('/visit', {
 			templateUrl: '/pages/visit/visit.html',
 			controller: 'visitCtrl',
