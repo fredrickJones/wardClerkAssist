@@ -138,7 +138,6 @@ p {
 	cursor: pointer;
 }
 
-/*-- The Hidden Address --*/
 .person-name {
 	text-align: left;
 	width: 60%;
@@ -155,11 +154,11 @@ p {
 }
 
 /*-- The Hidden Address --*/
-.person-address {
+/*.person-address {
 	position: relative;
 	top: 20px;
 	right: 0;
-}
+}*/
 
 /*-- Address Animation --*/
 .slide.ng-enter, .slide.ng-leave {

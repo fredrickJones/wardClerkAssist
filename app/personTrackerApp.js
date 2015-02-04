@@ -1,5 +1,5 @@
 'use strict';
-var app = angular.module('personTracker', ['firebase']);
+var app = angular.module('personTracker', ['firebase', 'ngAnimate']);
 
 app.constant('fireConstant', {
 	'firebaseUrl': 'https://wardclerk.firebaseio.com/'
