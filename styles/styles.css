@@ -161,13 +161,6 @@ p {
 	font-weight: lighter;
 }
 
-/*-- The Hidden Address --*/
-/*.person-address {
-	position: relative;
-	top: 20px;
-	right: 0;
-}*/
-
 /*-- Address Animation --*/
 .slide.ng-enter, .slide.ng-leave {
   -webkit-transition:0.5s linear ease;

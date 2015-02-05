@@ -26,7 +26,7 @@ app.controller('mainCtrl', function($scope, firebaseService) {
 	};
 
 	$scope.visible = false;
-	$scope.toggleAddress = function($event, address) {
+	$scope.toggleAddress = function() {
 		$scope.visible = !$scope.visible;
 	};
 

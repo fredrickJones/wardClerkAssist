@@ -25,7 +25,7 @@
 				<div class="list wanted">
 					<h3>Main List</h3>
 					<div class="person" ng-repeat="person in list | filter: {status: 'wantMe'}">
-						<div class="person-name" ng-click="toggleAddress($event, person.address)">{{person.name}}</div>
+						<div class="person-name" ng-click="toggleAddress()">{{person.name}}</div>
 						<button class="person-button" ng-click="notWanted(person)">mayby not?</button>
 						<button class="person-button" ng-click="delFromList(person)">delete</button>
 						<div class="person-address" ng-show="visible">{{person.address}}</div>
