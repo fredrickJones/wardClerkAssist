@@ -25,9 +25,9 @@ app.controller('mainCtrl', function($scope, firebaseService) {
 		// console.log(data);
 	};
 
-	$scope.visible = false;
-	$scope.toggleAddress = function() {
-		$scope.visible = !$scope.visible;
+	$scope.person = false;
+	$scope.toggleAddress = function(person) {
+		person.visible = !person.visible;
 	};
 
 	$scope.notWanted = function(person) {
