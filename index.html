@@ -25,20 +25,23 @@
 				<div class="list wanted">
 					<h3>Main List</h3>
 					<div class="person" ng-repeat="person in list | filter: {status: 'wantMe'}">
-						<div class="person-name" ng-click="showAddress($event)">{{person.name}}</div>
+						<div class="person-name" ng-click="toggleAddress($event, person.address)">{{person.name}}</div>
 						<button class="person-button" ng-click="notWanted(person)">mayby not?</button>
 						<button class="person-button" ng-click="delFromList(person)">delete</button>
+						<div class="person-address" ng-show="visible">{{person.address}}</div>
 					</div>
-					<div class="person-address" ng-show="visible">{{person.address}}</div>
+					
 				</div>
 
 				<div class="list unwanted">
 					<h3>Maybe Not List</h3>
 					<div class="person" ng-repeat="person in list | filter: {status: 'notWanted'}">
-						<div class="person-name" ng-click="showData(person)">{{person.name}}</div>
+						<div class="person-name" ng-click="toggleAddress()">{{person.name}}</div>
 						<button class="person-button" ng-click="moveBack(person)">woops</button>
 						<button class="person-button" ng-click="delFromList(person)">delete</button>
+						<div class="person-address" ng-show="visible">{{person.address}}</div>
 					</div>
+					
 				</div>
 			</div>
 		</div>
@@ -68,7 +71,6 @@
 	<script src="pages/entry/entryService.js"></script>
 	<script src="app/authService.js"></script>
 -->
-	<script type="text/javascript" src="app/animations.js"></script>
 	<script src="app/firebaseService.js"></script>
 </body>
 </html>

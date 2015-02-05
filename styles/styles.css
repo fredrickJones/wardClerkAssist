@@ -148,6 +148,14 @@ p {
 	font-weight: lighter;
 }
 
+.person-address {
+	text-align: left;
+	margin: 5px;
+	line-height: 22px;
+	font-size: 14px;
+	font-weight: lighter;
+}
+
 .person-button {
 	margin: 5px 5px 5px 0;
 	font-weight: lighter;

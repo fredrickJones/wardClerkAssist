@@ -25,10 +25,9 @@ app.controller('mainCtrl', function($scope, firebaseService) {
 		// console.log(data);
 	};
 
-	$scope.visible = true;
-	$scope.showAddress = function($event) {
+	$scope.visible = false;
+	$scope.toggleAddress = function($event, address) {
 		$scope.visible = !$scope.visible;
-		$event.stopPropagation();
 	};
 
 	$scope.notWanted = function(person) {
